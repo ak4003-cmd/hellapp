@@ -2,10 +2,15 @@ package org.example;
 
 public class Hello {
     public static void main(String[] args) {
-        String name = "World";
-        if(args.length > 0){
-            name = args[0];
+        StringBuilder sb = new StringBuilder();
+        String name = "";
+        for(int i=0; i < args.length; i++){
+            sb.append(args[i]);
+            if(i < args.length - 1) {
+                sb.append(", ");
+            }
+            name = sb.toString();
         }
-        System.out.println("Hello, " + name + "!");
+        System.out.println(name);
     }
 }
